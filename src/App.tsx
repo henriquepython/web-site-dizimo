@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import parishImage from "./assets/images/parish_community_action_1782049134625.jpg";
+import parishImage from "./assets/images/sanctuary_church_hero_1782049117535.jpg";
+import communityImage from "./assets/images/parish_community_action_1782049134625.jpg";
 import { 
   Church, 
   Heart, 
@@ -431,7 +432,7 @@ export default function App() {
           <div className="action-showcase">
             <div className="action-media">
               <img 
-                src="/src/assets/images/parish_community_action_1782049134625.jpg" 
+                src={communityImage} 
                 alt="Ação da comunidade paroquial e partilha" 
                 referrerPolicy="no-referrer"
               />
