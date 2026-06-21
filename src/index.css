@@ -1796,4 +1796,29 @@ footer {
   .faq-item.active .faq-answer {
     padding: 0.75rem 1rem 1.25rem 1rem !important;
   }
+
+  .oracao-text {
+    font-size: 1.3rem;
+    line-height: 1.75;
+  }
+
+  @media (max-width: 768px) {
+    .oracao-text {
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+  }
+
+  .oracao-card {
+    position: relative;
+  }
+
+  .oracao-card::before {
+    content: "✝";
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    color: rgba(170, 133, 74, 0.25);
+  }
 }

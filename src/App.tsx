@@ -426,6 +426,50 @@ export default function App() {
         </div>
       </section>
 
+      
+      <section id="oracao-dizimista" className="reflection-section bg-alt">
+      <div className="container">
+
+        <div className="section-title-wrap text-center">
+          <span className="badge">Vida Espiritual</span>
+          <h2>Oração do Dizimista</h2>
+        </div>
+
+        <div className="reflection-card oracao-card">
+
+          <blockquote className="reflection-quote oracao-text">
+            Senhor, fazei que eu seja um dizimista consciente.<br /><br />
+
+            Que cada dízimo que eu der seja um verdadeiro agradecimento,<br />
+            um ato de amor e o reconhecimento de tua bondade para comigo.<br /><br />
+
+            Sei que tudo que tenho de bom vem de Ti:<br />
+            paz, saúde, amor, prosperidade e bens.<br /><br />
+
+            Ajudai-me a dar com liberdade e justiça.<br />
+            Tirai todo egoísmo do meu coração.<br /><br />
+
+            Que eu possa amar cada vez mais o meu irmão.<br />
+            Quero ser um instrumento de paz e amor em tuas mãos.<br /><br />
+
+            Que o meu dízimo seja agradável a Ti, Senhor.<br /><br />
+
+            Amém.
+          </blockquote>
+
+          <div className="reflection-author">
+            Comunidade de Fé
+          </div>
+
+          <div className="reflection-bible">
+            "Deus ama quem dá com alegria." (2 Coríntios 9:7)
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
       {/* Pastoral Stewardship Information Panel */}
       <section style={{ backgroundColor: 'var(--color-bg-card)' }}>
         <div className="container">
@@ -638,6 +682,7 @@ export default function App() {
             <div>
               <h4 className="footer-heading">Opções</h4>
               <ul className="footer-links">
+                <li><a href="#oracao-dizimista" className="footer-link">Oração do Dizimista</a></li>
                 <li><a href="#teologia" className="footer-link">Dimensões do Dízimo</a></li>
                 <li><a href="#impacto" className="footer-link">Impacto</a></li>
                 <li><a href="#como-contribuir" className="footer-link">Como Ser Dízimista</a></li>
