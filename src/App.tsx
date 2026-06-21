@@ -18,7 +18,8 @@ import {
   Sparkles,
   Info,
   Menu,
-  X
+  X,
+  Instagram
 } from 'lucide-react';
 
 // Structuring Bible Reflections
@@ -116,6 +117,8 @@ const BIBLE_REFLECTIONS: Scripture[] = [
   }
 ];
 
+const KEY_PIX = '16260762005207';
+
 export default function App() {
   // Navigation active state
   const [activeTab, setActiveTab] = useState<string>('inicio');
@@ -197,7 +200,7 @@ export default function App() {
             <div className="navbar-logo-icon">
               <Church size={20} />
             </div>
-            <span>Santuário <span style={{ color: 'var(--color-primary)' }}>Paróquia</span></span>
+            <span>Paróquia <span style={{ color: 'var(--color-primary)' }}>São João Paulo II</span></span>
           </a>
 
           {/* Mobile Hamburguer Toggle Button */}
@@ -263,7 +266,7 @@ export default function App() {
         <div className="hero-overlay"></div>
         <div className="container">
           <div className="hero-content">
-            <span className="hero-subtitle">Pastoral do Dízimo • Paróquia Santuário</span>
+            <span className="hero-subtitle">Pastoral do Dízimo • Paróquia São João Paulo II</span>
             <h1 className="hero-title">Partilhar é um Gesto de Profunda Fé</h1>
             <p className="hero-desc">
               O dízimo não é imposto nem dever burocrático; é a devolução generosa de quem reconhece as bênçãos diárias e ama a sua comunidade paroquial ativa.
@@ -414,7 +417,7 @@ export default function App() {
               </div>
               <h4 className="impact-achieve-title">Liturgia e Evangelização</h4>
               <p className="impact-achieve-desc">
-                Garante a dignidade do altar, a beleza das celebrações dos sacramentos e a formação constante das nossas crianças e jovens na catequese e no Crisma.
+                Garante a dignidade do altar, a beleza das celebrações dos sacramentos e a formação constante das nossas crianças e jovens na catequese e no crisma.
               </p>
             </div>
           </div>
@@ -468,10 +471,14 @@ export default function App() {
                   <div style={{ backgroundColor: 'rgba(212, 175, 55, 0.1)', padding: '0.75rem', borderRadius: '50%', color: 'var(--color-primary)', flexShrink: 0 }}>
                     <Info size={20} />
                   </div>
-                  <div>
-                    <h4 style={{ fontWeight: 600, color: 'var(--color-secondary)', fontSize: '1.1rem', marginBottom: '0.25rem' }}>Transparência Paroquial</h4>
-                    <p style={{ fontSize: '0.92rem', color: 'var(--color-text-muted)', margin: 0 }}>As prestações de contas econômicas e pastorais são divulgadas periodicamente nos informativos e no mural oficial das missas para consulta da comunidade.</p>
-                  </div>
+                 <div>
+                  <h4 style={{ fontWeight: 600, color: 'var(--color-secondary)', fontSize: '1.1rem', marginBottom: '0.25rem' }}>
+                    Transparência e Confiança
+                  </h4>
+                  <p style={{ fontSize: '0.92rem', color: 'var(--color-text-muted)', margin: 0 }}>
+                    Valorizamos a transparência na administração dos recursos, oferecendo informações claras e acessíveis para fortalecer a confiança e o engajamento da comunidade.
+                  </p>
+                </div>
                 </div>
               </div>
             </div>
@@ -504,11 +511,11 @@ export default function App() {
                 </div>
               </div>
               <div className="pix-copy-box">
-                <span style={{ fontSize: '0.85rem', fontWeight: 600 }}>pix@paroquiasantuario.com.br</span>
+                {/* <span style={{ fontSize: '0.85rem', fontWeight: 600 }}>16260762005207</span> */}
                 <button 
                   className="btn-copy"
                   onClick={() => {
-                    navigator.clipboard.writeText('pix@paroquiasantuario.com.br');
+                    navigator.clipboard.writeText(KEY_PIX);
                     triggerToast('Chave Pix oficial copiada para a área de transferência!');
                   }}
                 >
@@ -518,34 +525,42 @@ export default function App() {
             </div>
 
             <div className="contribute-card">
-              <div>
-                <div className="contribute-header">
-                  <div className="contribute-icon-wrapper">
-                    <Gift size={22} />
-                  </div>
-                  <h3 className="contribute-title">Envelopes do Dízimo</h3>
+            <div>
+              <div className="contribute-header">
+                <div className="contribute-icon-wrapper">
+                  <Gift size={22} />
                 </div>
-                <div className="contribute-body">
-                  <p>Retire seu envelope do dízimo físico à entrada do templo ou nas mãos de nossos ministros e agentes da acolhida.</p>
-                  <p style={{ fontSize: '0.88rem' }}>Você poderá depositá-lo preenchido na cesta de coletas durante a liturgia ou entregá-lo na Pastoral do Acolhimento das missas dominicais.</p>
-                </div>
+                <h3 className="contribute-title">Contribuição Durante a Missa</h3>
+              </div>
+              <div className="contribute-body">
+                <p>
+                  Sua contribuição pode ser realizada presencialmente durante as celebrações, diretamente na mesa da Pastoral do Dízimo.
+                </p>
+                <p style={{ fontSize: '0.88rem' }}>
+                  Caso precise de orientação, procure os agentes da acolhida na entrada ou ao final da missa. Eles terão alegria em indicar a localização da Pastoral do Dízimo e esclarecer eventuais dúvidas.
+                </p>
               </div>
             </div>
+          </div>
 
-            <div className="contribute-card">
-              <div>
-                <div className="contribute-header">
-                  <div className="contribute-icon-wrapper">
-                    <BookOpen size={22} />
-                  </div>
-                  <h3 className="contribute-title">Presencial na Secretaria</h3>
+          <div className="contribute-card">
+            <div>
+              <div className="contribute-header">
+                <div className="contribute-icon-wrapper">
+                  <BookOpen size={22} />
                 </div>
-                <div className="contribute-body">
-                  <p>Nossa equipe pastoral está pronta para receber você na secretaria administrativa de terça a sábado, das 08h às 18h.</p>
-                  <p style={{ fontSize: '0.88rem' }}>Consulte também nossos agentes de acolhida presencial para cadastrar sua ficha ou tirar eventuais dúvidas.</p>
-                </div>
+                <h3 className="contribute-title">Cadastro e Informações</h3>
+              </div>
+              <div className="contribute-body">
+                <p>
+                  A Pastoral do Dízimo está disponível para acolher novos dizimistas, atualizar cadastros e fornecer informações sobre as formas de contribuição.
+                </p>
+                <p style={{ fontSize: '0.88rem' }}>
+                  Para atendimento, procure a mesa da pastoral durante as missas ou solicite auxílio aos agentes da acolhida, que poderão direcioná-lo adequadamente.
+                </p>
               </div>
             </div>
+          </div>
           </div>
         </div>
       </section>
@@ -569,15 +584,11 @@ export default function App() {
               },
               {
                 q: "Eu preciso dar exatamente 10% do meu salário bruto?",
-                a: "Na Igreja Católica espanhola e luso-brasileira, o dízimo não tem caráter de obrigação tarifária ou jurídica exata sobre 10%. Incentivamos que toda contribuição seja, sobretudo, proporcional ao sustento da sua própria família e, primordialmente, originada de um coração feliz. É um retorno grato conforme as suas próprias reais possibilidades orçamentárias."
-              },
-              {
-                q: "Como meu dízimo é fiscalizado na Paróquia Santuário?",
-                a: "Nossa comunidade possui total comprometimento com a seriedade e a verdade cristã. Anualmente fazemos a prestação pública de contas através de murais fixos de receitas e despesas exibidos no templo, auditado por nosso Conselho de Assuntos Econômicos Paroquiais."
+                a: "Na Igreja Católica, o dízimo não tem caráter de obrigação tarifária ou jurídica exata sobre 10%. Incentivamos que toda contribuição seja, sobretudo, proporcional ao sustento da sua própria família e, primordialmente, originada de um coração feliz. É um retorno grato conforme as suas próprias reais possibilidades orçamentárias."
               },
               {
                 q: "Como posso repassar a minha contribuição?",
-                a: "Você pode repassar o dízimo de forma inteiramente voluntária utilizando nossa chave Pix oficial, envelopes semanais litúrgicos ou visitando presencialmente a secretaria da paróquia São José."
+                a: "Você pode repassar o dízimo de forma inteiramente voluntária utilizando nossa chave Pix oficial, durante as missas na mesa da pastoral do dízimo ou visitando presencialmente a secretaria da paróquia."
               }
             ].map((faq, idx) => (
               <div 
@@ -610,19 +621,21 @@ export default function App() {
                 <div className="footer-logo-circle">
                   <Church size={16} />
                 </div>
-                <span>Santuário São José</span>
+                <span>Paróquia São João Paulo II</span>
               </div>
               <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.92rem', margin: 0 }}>
-                Paróquia Santuário e Centro de Amparo Pastoral e Missionário de Assistência Caridosa aos Vulneráveis. Uma fé vivida em gestos práticos de compaixão.
+                Arquidiocese Feira de Santana
               </p>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'rgba(255,255,255,0.5)', fontSize: '0.85rem' }}>
                 <MapPin size={14} color="var(--color-primary)" />
-                <span>Praça Central do Santuário, 1500 - Centro</span>
+                <span>Rua O, S/N - CONJ. JOÃO PAULO II - CEP: 44034-470 - FEIRA DE SANTANA - BA
+                  
+                </span>
               </div>
             </div>
 
             <div>
-              <h4 className="footer-heading">Nossas Pastoras</h4>
+              <h4 className="footer-heading">Opções</h4>
               <ul className="footer-links">
                 <li><a href="#teologia" className="footer-link">Dimensões do Dízimo</a></li>
                 <li><a href="#impacto" className="footer-link">Prestação de Contas & Impacto</a></li>
@@ -635,28 +648,28 @@ export default function App() {
               <h4 className="footer-heading">Contacto de Fé</h4>
               <ul className="footer-links" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.9rem' }}>
                 <li style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <Phone size={14} /> (11) 4002-8922
+                  <Phone size={14} /> (75) 3021-3955
                 </li>
                 <li style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <Mail size={14} /> contato@paroquiasantuario.com.br
+                  <a href="https://www.instagram.com/paroquiasaojoaopaulo2/" >
+                    <Instagram size={14} /> Instagram da Paróquia
+                  </a>
                 </li>
-                <li style={{ marginTop: '1rem', color: 'var(--color-primary)', fontWeight: 600 }}>
+                {/* <li style={{ marginTop: '1rem', color: 'var(--color-primary)', fontWeight: 600 }}>
                   Pix do Dízimo Oficial:
                   <span style={{ display: 'block', wordBreak: 'break-all', fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: 'white', marginTop: '4px' }}>
-                    pix@paroquiasantuario.com.br
+                    {KEY_PIX}
                   </span>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
 
           <div className="footer-bottom">
-            <span>© 2026 Paróquia Santuário São José. Todos os direitos reservados. Pastoral da Caridade e Dízimo eclesial voluntário.</span>
-            <div className="social-links">
-              <a href="#" className="social-btn"><Heart size={16} /></a>
-              <a href="#" className="social-btn"><Users size={16} /></a>
-              <a href="#" className="social-btn"><Compass size={16} /></a>
-            </div>
+            <span>© 2026 Paróquia São João Paulo II - Feira de Santana - BA. Todos os direitos reservados. Pastoral da Caridade e Dízimo eclesial voluntário.</span>
+            {/* <div className="social-links">
+              <a href="https://www.instagram.com/paroquiasaojoaopaulo2/" className="social-btn"><Instagram size={16} /></a>
+            </div> */}
           </div>
         </div>
       </footer>
