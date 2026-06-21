@@ -1554,3 +1554,227 @@ footer {
   line-height: 1.5;
   margin-bottom: 0;
 }
+
+/* ==========================================
+   Professional Mobile Responsiveness & Fixes
+   ========================================== */
+
+/* Reflection category badge */
+.reflection-theme-badge {
+  position: absolute;
+  top: 1.5rem;
+  right: 2.5rem;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  color: var(--color-primary);
+  border: 1px solid rgba(170, 133, 74, 0.25);
+  background-color: var(--color-bg-light);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Mobile Toggle Hamburger button */
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-secondary);
+  cursor: pointer;
+  padding: 8px;
+  align-items: center;
+  justify-content: center;
+  z-index: 1005;
+  transition: var(--transition-fast);
+}
+
+.mobile-toggle:hover {
+  color: var(--color-primary);
+  transform: scale(1.05);
+}
+
+/* Base mobile responsive styles */
+@media (max-width: 768px) {
+  /* Typography Scale Down */
+  h1 {
+    font-size: 2.15rem !important;
+  }
+  
+  h2 {
+    font-size: 1.65rem !important;
+  }
+  
+  h3 {
+    font-size: 1.35rem !important;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  /* Section Padding reduction */
+  section {
+    padding: 3rem 0 !important;
+  }
+
+  /* Mobile Toggle display */
+  .mobile-toggle {
+    display: flex;
+  }
+
+  /* Mobile Dropdown Navbar Menu Drawer */
+  .nav-links {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-bottom: 2px solid var(--color-border);
+    flex-direction: column;
+    padding: 1.75rem;
+    gap: 1rem;
+    align-items: center;
+    box-shadow: var(--shadow-md);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-15px);
+    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                visibility 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 999;
+  }
+
+  /* Adjust top offset when scrolled navbar has a different height */
+  .navbar.scrolled .nav-links {
+    top: 65px;
+  }
+
+  /* Open state */
+  .nav-links.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .nav-link {
+    width: 100%;
+    text-align: center;
+    font-size: 1.05rem;
+    padding: 10px 0;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-btn {
+    width: 90%;
+    display: inline-block;
+    text-align: center;
+    margin-top: 0.5rem;
+    padding: 12px;
+  }
+
+  /* Hero adjustments */
+  .hero {
+    padding-top: 100px !important;
+    padding-bottom: 4rem !important;
+    min-height: auto !important;
+  }
+  
+  .hero-title {
+    font-size: 2.25rem;
+    line-height: 1.25;
+    margin-bottom: 1rem;
+  }
+
+  .hero-desc {
+    font-size: 1.02rem;
+    margin-bottom: 2rem;
+    line-height: 1.55;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    gap: 0.75rem;
+  }
+
+  .hero-buttons a {
+    width: 100%;
+  }
+
+  /* Scroll Indicator - hide to avoid clutter on mobile screens */
+  .scroll-indicator {
+    display: none !important;
+  }
+
+  /* Theological reflection padding reduction and theme category flow */
+  .reflection-card {
+    padding: 1.75rem !important;
+    border-radius: var(--radius-md) !important;
+  }
+
+  .reflection-card::before {
+    font-size: 5rem !important;
+    top: 8px !important;
+    left: 15px !important;
+  }
+
+  .reflection-quote {
+    font-size: 1.15rem !important;
+    line-height: 1.5 !important;
+    margin-top: 2rem;
+  }
+
+  .reflection-theme-badge {
+    position: static !important;
+    display: inline-block !important;
+    margin-bottom: 1rem !important;
+    width: fit-content;
+  }
+}
+
+/* Extra small mobile phone view */
+@media (max-width: 550px) {
+  /* Pix Copy box column styling to avoid overflowing text on phone frames */
+  .pix-copy-box {
+    flex-direction: column !important;
+    gap: 12px !important;
+    padding: 14px !important;
+    text-align: center;
+  }
+
+  .pix-copy-box span {
+    word-break: break-all;
+    text-align: center;
+  }
+
+  .btn-copy {
+    width: 100%;
+    padding: 8px 16px !important;
+  }
+
+  /* Accordion FAQ spacing */
+  .faq-question-btn {
+    padding: 1.25rem 1rem !important;
+    font-size: 0.98rem !important;
+  }
+
+  .faq-answer {
+    padding: 0 1rem !important;
+  }
+
+  .faq-item.active .faq-answer {
+    padding: 0.75rem 1rem 1.25rem 1rem !important;
+  }
+}

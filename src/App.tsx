@@ -16,7 +16,9 @@ import {
   Gift,
   ArrowRight,
   Sparkles,
-  Info
+  Info,
+  Menu,
+  X
 } from 'lucide-react';
 
 // Structuring Bible Reflections
@@ -53,6 +55,13 @@ export default function App() {
   // Navigation active state
   const [activeTab, setActiveTab] = useState<string>('inicio');
   const [navbarScrolled, setNavbarScrolled] = useState<boolean>(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
+
+  // Helper to click link and auto-close mobile drawer
+  const handleNavLinkClick = (tab: string) => {
+    setActiveTab(tab);
+    setIsMobileMenuOpen(false);
+  };
 
   // Reflections State
   const [reflectionIndex, setReflectionIndex] = useState<number>(0);
@@ -119,20 +128,29 @@ export default function App() {
       {/* Navigation Header */}
       <header className={`navbar ${navbarScrolled ? 'scrolled' : ''}`}>
         <div className="container navbar-container">
-          <a href="#inicio" className="navbar-logo" onClick={() => setActiveTab('inicio')}>
+          <a href="#inicio" className="navbar-logo" onClick={() => handleNavLinkClick('inicio')}>
             <div className="navbar-logo-icon">
               <Church size={20} />
             </div>
             <span>Santuário <span style={{ color: 'var(--color-primary)' }}>Paróquia</span></span>
           </a>
 
+          {/* Mobile Hamburguer Toggle Button */}
+          <button 
+            className="mobile-toggle" 
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle navigation menu"
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+
           <nav>
-            <ul className="nav-links">
+            <ul className={`nav-links ${isMobileMenuOpen ? 'is-open' : ''}`}>
               <li>
                 <a 
                   href="#inicio" 
                   className={`nav-link ${activeTab === 'inicio' ? 'active' : ''}`}
-                  onClick={() => setActiveTab('inicio')}
+                  onClick={() => handleNavLinkClick('inicio')}
                 >
                   Início
                 </a>
@@ -141,7 +159,7 @@ export default function App() {
                 <a 
                   href="#teologia" 
                   className={`nav-link ${activeTab === 'teologia' ? 'active' : ''}`}
-                  onClick={() => setActiveTab('teologia')}
+                  onClick={() => handleNavLinkClick('teologia')}
                 >
                   Teologia
                 </a>
@@ -150,7 +168,7 @@ export default function App() {
                 <a 
                   href="#impacto" 
                   className={`nav-link ${activeTab === 'impacto' ? 'active' : ''}`}
-                  onClick={() => setActiveTab('impacto')}
+                  onClick={() => handleNavLinkClick('impacto')}
                 >
                   Impacto
                 </a>
@@ -159,7 +177,7 @@ export default function App() {
                 <a 
                   href="#como-contribuir" 
                   className="nav-btn"
-                  onClick={() => setActiveTab('como-contribuir')}
+                  onClick={() => handleNavLinkClick('como-contribuir')}
                 >
                   Como Contribuir
                 </a>
@@ -186,11 +204,11 @@ export default function App() {
               O dízimo não é imposto nem dever burocrático; é a devolução generosa de quem reconhece as bênçãos diárias e ama a sua comunidade paroquial ativa.
             </p>
             <div className="hero-buttons">
-              <a href="#como-contribuir" className="btn-primary" onClick={() => setActiveTab('como-contribuir')}>
+              <a href="#como-contribuir" className="btn-primary" onClick={() => handleNavLinkClick('como-contribuir')}>
                 <Award size={18} />
                 Como Contribuir
               </a>
-              <a href="#impacto" className="btn-secondary" onClick={() => setActiveTab('impacto')}>
+              <a href="#impacto" className="btn-secondary" onClick={() => handleNavLinkClick('impacto')}>
                 <Heart size={18} />
                 Ver Impacto Social
               </a>
@@ -217,16 +235,7 @@ export default function App() {
           </div>
 
           <div className="reflection-card" style={{ opacity: fadeReflection ? 1 : 0.4 }}>
-            <span style={{ 
-              position: 'absolute', 
-              top: '1.5rem', 
-              right: '2.5rem', 
-              fontSize: '0.8rem', 
-              fontFamily: 'var(--font-mono)',
-              textTransform: 'uppercase',
-              color: 'var(--color-primary)',
-              fontWeight: 700 
-            }}>
+            <span className="reflection-theme-badge">
               Tema: {currentReflection.category}
             </span>
             <blockquote className="reflection-quote">
