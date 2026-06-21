@@ -278,9 +278,9 @@ export default function App() {
                 <Award size={18} />
                 Como Posso Ser Dízimista?
               </a>
-              <a href="#impacto" className="btn-secondary" onClick={() => handleNavLinkClick('impacto')}>
+              <a href="#faq" className="btn-secondary" onClick={() => handleNavLinkClick('faq')}>
                 <Heart size={18} />
-                Ver Impacto Social
+                Dúvidas
               </a>
             </div>
           </div>
@@ -611,7 +611,7 @@ export default function App() {
       </section>
 
       {/* Interactive FAQ Accordion */}
-      <section style={{ backgroundColor: 'var(--color-bg-card)' }}>
+      <section id="faq" style={{ backgroundColor: 'var(--color-bg-card)' }}>
         <div className="container">
           <div className="section-title-wrap text-center">
             <span className="badge">Perguntas Frequentes</span>
