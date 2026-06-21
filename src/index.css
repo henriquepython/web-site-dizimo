@@ -1468,12 +1468,31 @@ footer {
   gap: 12px;
 }
 
+/* Mobile */
+@media (max-width: 768px) {
+  .pix-copy-box {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .pix-copy-box span {
+    width: 100%;
+  }
+
+  .btn-copy {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 .btn-copy {
   background: var(--color-primary);
   color: white;
   border: none;
   border-radius: var(--radius-sm);
-  padding: 1rem 5.9rem;
+  padding: 1rem 5.4rem;
   font-family: var(--font-sans);
   font-weight: 600;
   font-size: 0.75rem;

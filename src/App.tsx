@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import parishImage from "./assets/images/parish_community_action_1782049134625.jpg";
 import { 
   Church, 
   Heart, 
@@ -247,7 +248,7 @@ export default function App() {
                   className="nav-btn"
                   onClick={() => handleNavLinkClick('como-contribuir')}
                 >
-                  Como Contribuir
+                  Como Posso Ser Dízimista?
                 </a>
               </li>
             </ul>
@@ -258,7 +259,7 @@ export default function App() {
       {/* Hero Section */}
       <section id="inicio" className="hero">
         <img 
-          src="/src/assets/images/sanctuary_church_hero_1782049117535.jpg" 
+          src={parishImage} 
           alt="Majestic Sanctuary Church Interior" 
           className="hero-bg-img"
           referrerPolicy="no-referrer"
@@ -274,7 +275,7 @@ export default function App() {
             <div className="hero-buttons">
               <a href="#como-contribuir" className="btn-primary" onClick={() => handleNavLinkClick('como-contribuir')}>
                 <Award size={18} />
-                Como Contribuir
+                Como Posso Ser Dízimista?
               </a>
               <a href="#impacto" className="btn-secondary" onClick={() => handleNavLinkClick('impacto')}>
                 <Heart size={18} />
@@ -502,6 +503,44 @@ export default function App() {
               <div>
                 <div className="contribute-header">
                   <div className="contribute-icon-wrapper">
+                    <BookOpen size={22} />
+                  </div>
+                  <h3 className="contribute-title">Cadastro e Informações</h3>
+                </div>
+                <div className="contribute-body">
+                  <p>
+                    A Pastoral do Dízimo está disponível para acolher novos dizimistas, atualizar cadastros e fornecer informações sobre as formas de contribuição.
+                  </p>
+                  <p style={{ fontSize: '0.88rem' }}>
+                    Para atendimento, procure a mesa da pastoral durante as missas ou solicite auxílio aos agentes da acolhida, que poderão direcioná-lo adequadamente.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="contribute-card">
+              <div>
+                <div className="contribute-header">
+                  <div className="contribute-icon-wrapper">
+                    <Gift size={22} />
+                  </div>
+                  <h3 className="contribute-title">Devolução</h3>
+                </div>
+                <div className="contribute-body">
+                  <p>
+                    O Dizimo pode ser devolvido de forma voluntária durante as missas, na mesa da pastoral do dízimo, ou diretamente na secretaria paroquial. Cada contribuição é um gesto de amor e compromisso com a comunidade; pode ser feito através carnês e envelopes. Se é feito durante as missas é necessário evitar confusão com as ofertas.
+                  </p>
+                  <p style={{ fontSize: '0.88rem' }}>
+                    Caso precise de orientação, procure os agentes da acolhida na entrada ou ao final da missa. Eles terão alegria em indicar a localização da Pastoral do Dízimo e esclarecer eventuais dúvidas.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="contribute-card">
+              <div>
+                <div className="contribute-header">
+                  <div className="contribute-icon-wrapper">
                     <CheckCircle size={22} />
                   </div>
                   <h3 className="contribute-title">Chave Pix Oficial</h3>
@@ -510,57 +549,18 @@ export default function App() {
                   <p>Partilhe de forma instantânea sem taxas bancárias. Clique no botão ao lado para copiar a chave Pix oficial do dízimo paroquial.</p>
                 </div>
               </div>
-              <div className="pix-copy-box">
-                {/* <span style={{ fontSize: '0.85rem', fontWeight: 600 }}>16260762005207</span> */}
-                <button 
-                  className="btn-copy"
-                  onClick={() => {
-                    navigator.clipboard.writeText(KEY_PIX);
-                    triggerToast('Chave Pix oficial copiada para a área de transferência!');
-                  }}
-                >
-                  Copiar Chave
-                </button>
-              </div>
-            </div>
-
-            <div className="contribute-card">
-            <div>
-              <div className="contribute-header">
-                <div className="contribute-icon-wrapper">
-                  <Gift size={22} />
-                </div>
-                <h3 className="contribute-title">Contribuição Durante a Missa</h3>
-              </div>
-              <div className="contribute-body">
-                <p>
-                  Sua contribuição pode ser realizada presencialmente durante as celebrações, diretamente na mesa da Pastoral do Dízimo.
-                </p>
-                <p style={{ fontSize: '0.88rem' }}>
-                  Caso precise de orientação, procure os agentes da acolhida na entrada ou ao final da missa. Eles terão alegria em indicar a localização da Pastoral do Dízimo e esclarecer eventuais dúvidas.
-                </p>
-              </div>
-            </div>
+            <div className="pix-copy-box">
+            <button
+              className="btn-copy"
+              onClick={() => {
+                navigator.clipboard.writeText(KEY_PIX);
+                triggerToast('Chave Pix oficial copiada para a área de transferência!');
+              }}
+            >
+              Copiar Chave Pix
+            </button>
           </div>
-
-          <div className="contribute-card">
-            <div>
-              <div className="contribute-header">
-                <div className="contribute-icon-wrapper">
-                  <BookOpen size={22} />
-                </div>
-                <h3 className="contribute-title">Cadastro e Informações</h3>
-              </div>
-              <div className="contribute-body">
-                <p>
-                  A Pastoral do Dízimo está disponível para acolher novos dizimistas, atualizar cadastros e fornecer informações sobre as formas de contribuição.
-                </p>
-                <p style={{ fontSize: '0.88rem' }}>
-                  Para atendimento, procure a mesa da pastoral durante as missas ou solicite auxílio aos agentes da acolhida, que poderão direcioná-lo adequadamente.
-                </p>
-              </div>
             </div>
-          </div>
           </div>
         </div>
       </section>
@@ -638,8 +638,8 @@ export default function App() {
               <h4 className="footer-heading">Opções</h4>
               <ul className="footer-links">
                 <li><a href="#teologia" className="footer-link">Dimensões do Dízimo</a></li>
-                <li><a href="#impacto" className="footer-link">Prestação de Contas & Impacto</a></li>
-                <li><a href="#como-contribuir" className="footer-link">Canais de Contribuição</a></li>
+                <li><a href="#impacto" className="footer-link">Impacto</a></li>
+                <li><a href="#como-contribuir" className="footer-link">Como Ser Dízimista</a></li>
                 <li><a href="#inicio" className="footer-link">Início do Portal</a></li>
               </ul>
             </div>
