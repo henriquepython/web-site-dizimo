@@ -1,0 +1,6 @@
+{
+  "name": "Paróquia Santuário",
+  "description": "Portal interativo da Pastoral do Dízimo da Paróquia Santuário, apresentando reflexões, teologia, impacto com animações CSS e área moderna e interativa sem usar Tailwind.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
