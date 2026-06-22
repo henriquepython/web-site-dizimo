@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import parishImage from "./assets/images/sanctuary_church_hero_1782049117535.jpg";
 import communityImage from "./assets/images/parish_community_action_1782049134625.jpg";
+import Brasao from "./assets/images/brasao.png";
 import { 
   Church, 
   Heart, 
@@ -198,11 +199,18 @@ export default function App() {
       {/* Navigation Header */}
       <header className={`navbar ${navbarScrolled ? 'scrolled' : ''}`}>
         <div className="container navbar-container">
-          <a href="#inicio" className="navbar-logo" onClick={() => handleNavLinkClick('inicio')}>
+         <a
+            href="#inicio"
+            className="navbar-logo"
+            onClick={() => handleNavLinkClick("inicio")}
+          >
             <div className="navbar-logo-icon">
-              <Church size={20} />
+              <img src={Brasao} alt="Brasão Paróquia São João Paulo II" />
             </div>
-            <span>Paróquia <span style={{ color: 'var(--color-primary)' }}>São João Paulo II</span></span>
+
+            <span>
+              Paróquia <span style={{ color: "var(--color-primary)" }}>São João Paulo II</span>
+            </span>
           </a>
 
           {/* Mobile Hamburguer Toggle Button */}
@@ -663,9 +671,9 @@ export default function App() {
           <div className="footer-grid">
             <div className="footer-about">
               <div className="footer-logo">
-                <div className="footer-logo-circle">
-                  <Church size={16} />
-                </div>
+              <div className="navbar-logo-icon">
+                <img src={Brasao} alt="Brasão Paróquia São João Paulo II" />
+              </div>
                 <span>Paróquia São João Paulo II</span>
               </div>
               <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.92rem', margin: 0 }}>
@@ -713,10 +721,8 @@ export default function App() {
 
           <div className="footer-bottom">
             <span>© 2026 Paróquia São João Paulo II - Feira de Santana - BA. Todos os direitos reservados. Pastoral da Caridade e Dízimo eclesial voluntário.</span>
-            {/* <div className="social-links">
-              <a href="https://www.instagram.com/paroquiasaojoaopaulo2/" className="social-btn"><Instagram size={16} /></a>
-            </div> */}
           </div>
+          <span className="footerBy-bottom">Por João H. B. Cerqueira</span>
         </div>
       </footer>
     </>
