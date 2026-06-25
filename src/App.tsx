@@ -35,92 +35,90 @@ interface Scripture {
 const BIBLE_REFLECTIONS: Scripture[] = [
   {
     text: "Cada um dê conforme determinou em seu coração, não com pesar ou por obrigação, pois Deus ama quem dá com alegria.",
-    reference: "2 Coríntios 9:7",
+    reference: "2 Cor 9,7",
     category: "Generosidade"
   },
   {
     text: "Aquele que semeia pouco, pouco colherá; aquele que semeia com abundância, com abundância colherá.",
-    reference: "2 Coríntios 9:6",
+    reference: "2 Cor 9,6",
     category: "Generosidade"
   },
   {
     text: "Dai, e ser-vos-á dado; boa medida, recalcada, sacudida e transbordando, vos deitarão no vosso regaço; porque com a mesma medida com que medirdes também vos medirão a vós.",
-    reference: "Lucas 6:38",
+    reference: "Lc 6,38",
     category: "Fraternidade"
   },
   {
     text: "Há maior felicidade em dar do que em receber.",
-    reference: "Atos 20:35",
+    reference: "At 20,35",
     category: "Partilha"
   },
   {
     text: "Trazei todos os dízimos à casa do tesouro, para que haja mantimento na minha casa, e depois fazei prova de mim nisto, diz o Senhor dos Exércitos, se eu não vos abrir as janelas do céu, e não derramar sobre vós uma bênção tal até que não haja lugar suficiente para a recolherdes.",
-    reference: "Malaquias 3:10",
+    reference: "Ml 3,10",
     category: "Aliança"
   },
   {
     text: "Todos os dízimos da terra, quer dos cereais, quer dos frutos das árvores, pertencem ao Senhor; são coisa consagrada ao Senhor.",
-    reference: "Levítico 27:30",
+    reference: "Lv 27,30",
     category: "Consagração"
   },
   {
     text: "Honra ao Senhor com os teus bens, e com as primícias de toda a tua renda; e se encherão os teus celeiros abundantemente, e transbordarão de mosto os teus lagares.",
-    reference: "Provérbios 3:9-10",
+    reference: "Pr 3,9-10",
     category: "Providência"
   },
   {
     text: "Não aparecereis diante do Senhor de mãos vazias. Cada um oferecerá o que puder, conforme a bênção que o Senhor teu Deus te tiver concedido.",
-    reference: "Deuteronômio 16:16-17",
+    reference: "Dt 16,16-17",
     category: "Oferta"
   },
   {
     text: "Quem é generoso será abençoado, porque reparte o seu pão com o pobre.",
-    reference: "Provérbios 22:9",
+    reference: "Pr 22,9",
     category: "Generosidade"
   },
   {
     text: "Quem dá aos pobres não passará necessidade.",
-    reference: "Provérbios 28:27",
+    reference: "Pr 28,27",
     category: "Caridade"
   },
   {
     text: "Não esqueçais a beneficência e a solidariedade, porque são esses os sacrifícios que agradam a Deus.",
-    reference: "Hebreus 13:16",
+    reference: "Hb 13,16",
     category: "Solidariedade"
   },
   {
     text: "Todos os fiéis viviam unidos e tinham tudo em comum; vendiam suas propriedades e bens e repartiam o dinheiro entre todos, conforme a necessidade de cada um.",
-    reference: "Atos 2:44-45",
+    reference: "At 2,44-45",
     category: "Comunidade"
   },
   {
     text: "Repartia-se a cada um conforme sua necessidade.",
-    reference: "Atos 4:35",
+    reference: "At 4,35",
     category: "Fraternidade"
   },
   {
     text: "Jesus observava como a multidão depositava moedas no tesouro do templo. Uma pobre viúva colocou duas pequenas moedas. Então disse: esta pobre viúva deu mais do que todos.",
-    reference: "Marcos 12:41-44",
+    reference: "Mc 12,41-44",
     category: "Entrega"
   },
   {
     text: "Vendei os vossos bens e dai esmola. Fazei para vós bolsas que não envelheçam, um tesouro inesgotável nos céus.",
-    reference: "Lucas 12:33",
+    reference: "Lc 12,33",
     category: "Desapego"
   },
   {
     text: "Dá esmola de teus bens e não desvies o rosto de nenhum pobre.",
-    reference: "Tobias 4:7",
+    reference: "Tb 4,7",
     category: "Caridade"
   },
   {
     text: "A oração acompanhada de jejum é boa, mas melhor ainda é a esmola acompanhada de justiça.",
-    reference: "Tobias 12:8",
+    reference: "Tb 12,8",
     category: "Justiça"
   }
 ];
-
-const KEY_PIX = '16260762005207';
 
 export default function App() {
   // Navigation active state
@@ -590,7 +588,7 @@ export default function App() {
               </div>
             </div>
 
-            <div className="contribute-card">
+            {/* <div className="contribute-card">
               <div>
                 <div className="contribute-header">
                   <div className="contribute-icon-wrapper">
@@ -613,7 +611,7 @@ export default function App() {
               Copiar Chave Pix
             </button>
           </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
