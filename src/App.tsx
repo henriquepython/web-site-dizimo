@@ -468,7 +468,7 @@ export default function App() {
           </div>
 
           <div className="reflection-bible">
-            "Deus ama quem dá com alegria." (2 Coríntios 9:7)
+            "Deus ama quem dá com alegria." (2 Cor 9,7)
           </div>
 
         </div>
